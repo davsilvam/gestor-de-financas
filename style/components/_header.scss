@@ -1,0 +1,49 @@
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+
+    #user {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 70%;
+        gap: 2.5%;
+
+        & img {
+            height: 65%;
+            border-radius: 50%;
+        }
+
+        & span {
+            h3 {
+                font-size: 1em;
+            }
+            p {
+                font-size: .8em;
+                font-weight: 500;
+                color: $secondary-contrast-color;
+            }
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 3%;
+        height: 100%;
+
+        button {
+            width: 35px;
+            height: 35px;
+            background-color: transparent;
+            border: transparent;
+
+            span {
+                transform: translateY(5%);
+                color: $secondary-contrast-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,272 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $tertiary-color;
+
+    #balance {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        width: 80%;
+        margin: 10% 0;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: $primary-color;
+        position: relative;
+        
+        svg {
+            display: block;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            z-index: 10;
+            border-radius: 0 0 10px 10px;
+
+            & path {
+                fill: #7552c8;
+            }
+        }
+
+        #card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+
+            h1 {
+                font-weight: 700;
+                font-size: 100%;
+                
+            }
+    
+            h2 {
+                font-size: 140%;
+            }
+    
+        }
+    }
+
+    #recent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 80%;
+        gap: .5em;
+        margin-bottom: 1em;
+
+        h2 {
+            font-size: 1.2em;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column-reverse;
+            width: 100%;
+            gap: .5em;
+
+            #not_transactions {
+                font-weight: 600;
+                font-size: 1em;
+                color: $secondary-contrast-color;
+                opacity: .3;
+            }
+
+            li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 4%;
+                border-radius: .5em;
+                list-style: none;
+                background-color: $secondary-color;
+
+                h5 {
+                    font-size: .8em;
+                    font-weight: 500;
+                    color: $secondary-contrast-color;
+                }
+
+                &.ganho {
+                    h3 {
+                        color: limegreen;
+                    }
+                }
+
+                &.despesa {
+                    h3 {
+                        color: crimson;
+                    }
+                }
+            }
+        }
+    }
+
+    #transactions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 80%;
+        gap: .5em;
+        margin-bottom: 1em;
+
+        h2 {
+            font-size: 1.2em;
+        }
+
+        & > div {
+            padding: 4%;
+            width: 100%;
+            background-color: $secondary-color;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: .5em;
+
+            input[type="number"] {
+                width: 100%;
+                height: 3em;
+                margin-bottom: 1em;
+                text-align: center;
+                font-size: 1em;
+                font-weight: 600;
+                color: $primary-contrast-color;
+                background-color: $tertiary-color;
+                border-radius: 1em;
+                border: transparent;
+                outline: none;
+            }
+
+            input[type=number]::-webkit-inner-spin-button { 
+                -webkit-appearance: none;
+                
+            }
+            
+            input[type=number] { 
+               -moz-appearance: textfield;
+               appearance: textfield;
+            }
+
+            #select-account {
+                width: 100%;
+                select {
+                    width: 100%;
+                    height: 2.5em;
+                    padding: 0 .6em;
+                    border: transparent;
+                    border-radius: .3em;
+                    font-size: 1em;
+                    color: $primary-contrast-color;
+                    background-color: $tertiary-color;
+                    outline: none;
+
+                    option {
+                        font-size: .8em;
+
+                        &:checked {
+                            background-color: #7552c8;
+                        }
+                    }
+                }
+            }
+
+            fieldset {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 2em;
+                align-items: center;
+                padding: .6em 0;
+                margin: 1em 0;
+                border: none;
+
+                label { 
+                    display: flex;
+                    align-items: center;
+                    gap: .2em;
+                    color: $primary-contrast-color;
+                    font-weight: 500;
+                    font-size: 1em;
+                    cursor: pointer;
+                    border: solid .1em $primary-color;
+                    padding: .2em .5em;
+
+                    span {
+                        font-size: 1.2em;
+                    }
+                }
+
+                input {
+                    display: none;
+                }
+
+                input:checked + label:nth-child(2)  {
+                    transition: .3s ease-in-out;
+                    border-color: crimson;
+                    background-color: crimson;
+                }
+                input:checked + label:nth-child(4)  {
+                    transition: .3s ease-in-out;
+                    border-color: limegreen;
+                    background-color: limegreen;
+                }
+            }
+        }
+
+        button {
+            width: 50%;
+            background-color: $primary-color;
+            color: $primary-contrast-color;
+            font-weight: 700;
+            padding: .3em 0;
+            font-size: 1em;
+            border: .1em solid $primary-color;
+            cursor: pointer;
+
+            &:disabled {
+                background-color: transparent;
+                cursor: unset;
+            }
+        }
+    }
+
+    #accounts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 80%;
+        gap: .5em;
+        margin-bottom: 1em;
+
+        h2 {
+            font-size: 1.2em;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: .5em;
+
+            li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 4%;
+                border-radius: .5em;
+                list-style: none;
+                background-color: $primary-color;
+
+                h4 {
+                    font-size: 1em;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

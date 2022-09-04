@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+@import 'colors';
+
+body {
+    height: 100%;
+    width: 100%;
+
+    #container {
+        width: 100%;
+        height: 100%;
+        color: $primary-contrast-color;
+        background-color: $secondary-color;
+    }
+}
+
+@import 'components/header';
+@import 'components/main-content';
+
+@media screen and (min-width: '720px') {
+    main {
+        display: grid;
+        grid-template-columns: 1fr, 1fr;
+        grid-template-rows: 1fr, 1fr;
+        gap: 4em;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        padding: 3em;
+
+        #balance {
+            width: 100%;
+            height: 70%;
+            grid-area: 1 / 1;
+        }
+
+        #recent {
+            width: 100%;
+            grid-area: 2 / 2;
+        }
+
+        #transactions {
+            width: 100%;
+            grid-area: 2 / 1;
+        }
+
+        #accounts {
+            width: 100%;
+            grid-area: 1 / 2;
+        }
+    }
+}

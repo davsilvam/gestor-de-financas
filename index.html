@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="style/main.css">
+    <title>Gestor de Finança</title>
+</head>
+
+<body>
+    <section id="container">
+
+        <header>
+            <div id="user">
+                <img id="profile" src="imgs/luffy.jfif" alt="Perfil">
+                <span>
+                    <h3 id="name">Olá, David</h3>
+                    <p id="welcome">Bom dia!</p>
+                </span>
+            </div>
+
+            <nav>
+                <button><span class="material-symbols-outlined">contrast</span></button>
+                <button><span class="material-symbols-outlined">notifications</span></button>
+            </nav>
+        </header>
+
+        <main>
+            <section id="balance">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#0099ff" fill-opacity="1"
+                        d="M0,128L48,149.3C96,171,192,213,288,202.7C384,192,480,128,576,133.3C672,139,768,213,864,213.3C960,213,1056,139,1152,112C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+                        style="user-select: auto;"></path>
+                </svg>
+                <div id="card">
+                    <h1>Seu saldo</h1>
+                    <h2 id="current_balance">R$ 00.00</h2>
+                </div>
+            </section>
+
+            <section id="recent">
+                <h2>Transações Recentes</h2>
+                <ul id="last_transactions">
+                    <h3 id="not_transactions">Sem transações recentes.</h3>
+                </ul>
+            </section>
+
+            <section id="transactions" onchange="checarInputs()">
+                <h2>Adicionar transações</h2>
+                <div>
+                    <input id="transaction_value" type="number" placeholder="R$ 00.00">
+                    <div id="select-account">
+                        <select name="contas" id="contas">
+                            <option value="0">Carteira</option>
+                            <option value="1">Conta Corrente</option>
+                            <option value="2">Poupança</option>
+                        </select>
+                    </div>
+                    <fieldset>
+                        <input type="radio" name="tipo-da-transação" id="despesa">
+                        <label for="despesa">Despesa<span class="material-symbols-outlined">trending_down</span></label>
+                        <input type="radio" name="tipo-da-transação" id="ganho">
+                        <label for="ganho">Ganho<span class="material-symbols-outlined">trending_up</span></label>
+                    </fieldset>
+                    <button id="transaction_submit" disabled>Adicionar</button>
+                </div>
+            </section>
+
+            <section id="accounts">
+                <h2>Contas</h2>
+                <ul id="accounts-type">
+                    <li>
+                        <div>
+                            <div><span class="material-symbols-outlined">wallet</span></div>
+                            <h4>Carteira</h4>
+                        </div>
+                        <h3 class="account_saldo">R$ 00.00</h3>
+                    </li>
+                    <li>
+                        <div>
+                            <div><span class="material-symbols-outlined">account_balance</span></div>
+                            <h4>Conta Corrente</h4>
+                        </div>
+                        <h3 class="account_saldo">R$ 00.00</h3>
+                    </li>
+                    <li>
+                        <div>
+                            <div><span class="material-symbols-outlined">savings</span></div>
+                            <h4>Poupança</h4>
+                        </div>
+                        <h3 class="account_saldo">R$ 00.00</h3>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
