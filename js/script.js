@@ -15,7 +15,7 @@ const saudarUsuário = () => {
 saudarUsuário()
 
 const valorDaTransacao = document
-    .querySelector('#transaction_value')
+    .querySelector('#transactions__value')
 const selecionarConta = document
     .querySelector('#contas')
 const ganho = document
@@ -23,7 +23,7 @@ const ganho = document
 const despesa = document
     .querySelector('#despesa')
 const botaoTransacoes = document
-    .querySelector('#transaction_submit')
+    .querySelector('#transactions__submit')
 
 const transacoes = []
 
@@ -90,7 +90,7 @@ const calcularSaldoDaConta = contaNome => {
 }
 
 const saldosDOM = document
-    .querySelectorAll('.account_saldo')
+    .querySelectorAll('.accounts__saldo')
 
 const alterarSaldoDaContaDOM =
     (valor, contaNome) => {
@@ -107,7 +107,7 @@ const alterarSaldoDaContaDOM =
     }
 
 const saldoTotalDOM = document
-    .querySelector('#current_balance')
+    .querySelector('#card__balance')
 
 const definirSaldoAtual = () => {
     const saldosDasContas = contas
@@ -127,12 +127,12 @@ const definirSaldoAtual = () => {
 }
 
 const ultimasTransacoes = document
-    .querySelector('#last_transactions')
+    .querySelector('#last-transactions')
 
 // FIXME:
 const criarTransacaoDOM = () => {
     const semTransacoes = document
-        .querySelector('#not_transactions')
+        .querySelector('#not-transactions')
     if (transacoes.length == 1) {
         ultimasTransacoes
             .removeChild(semTransacoes)
@@ -155,12 +155,12 @@ const criarTransacaoDOM = () => {
     let valorDaTransacaoDOMAbsoluto =
         Math.abs(valorDaTransacaoDOM).toFixed(2)
     if (tipoDaTransacaoDOM == 'Despesa') {
-        transacaoDOM.classList.add('despesa')
+        transacaoDOM.classList.add('transaction--despesa')
         valorDaTransacaoDOMAbsoluto =
             '- R$ ' + valorDaTransacaoDOMAbsoluto
     }
     else {
-        transacaoDOM.classList.add('ganho')
+        transacaoDOM.classList.add('transaction--ganho')
         valorDaTransacaoDOMAbsoluto =
             '+ R$ ' + valorDaTransacaoDOMAbsoluto
     }

@@ -37,22 +37,22 @@
                 </svg>
                 <div id="card">
                     <h1>Seu saldo</h1>
-                    <h2 id="current_balance">R$ 00.00</h2>
+                    <h2 id="card__balance">R$ 00.00</h2>
                 </div>
             </section>
 
             <section id="recent">
                 <h2>Transações Recentes</h2>
-                <ul id="last_transactions">
-                    <h3 id="not_transactions">Sem transações recentes.</h3>
+                <ul id="last-transactions">
+                    <h3 id="not-transactions">Sem transações recentes.</h3>
                 </ul>
             </section>
 
             <section id="transactions" onchange="checarInputs()">
                 <h2>Adicionar transações</h2>
                 <div>
-                    <input id="transaction_value" type="number" placeholder="R$ 00.00">
-                    <div id="select-account">
+                    <input id="transactions__value" type="number" placeholder="R$ 00.00">
+                    <div id="transactions__select-account">
                         <select name="contas" id="contas">
                             <option value="0">Carteira</option>
                             <option value="1">Conta Corrente</option>
@@ -65,7 +65,7 @@
                         <input type="radio" name="tipo-da-transação" id="ganho">
                         <label for="ganho">Ganho<span class="material-symbols-outlined">trending_up</span></label>
                     </fieldset>
-                    <button id="transaction_submit" disabled>Adicionar</button>
+                    <button id="transactions__submit" disabled>Adicionar</button>
                 </div>
             </section>
 
@@ -77,21 +77,21 @@
                             <div><span class="material-symbols-outlined">wallet</span></div>
                             <h4>Carteira</h4>
                         </div>
-                        <h3 class="account_saldo">R$ 00.00</h3>
+                        <h3 class="accounts__saldo">R$ 00.00</h3>
                     </li>
                     <li>
                         <div>
                             <div><span class="material-symbols-outlined">account_balance</span></div>
                             <h4>Conta Corrente</h4>
                         </div>
-                        <h3 class="account_saldo">R$ 00.00</h3>
+                        <h3 class="accounts__saldo">R$ 00.00</h3>
                     </li>
                     <li>
                         <div>
                             <div><span class="material-symbols-outlined">savings</span></div>
                             <h4>Poupança</h4>
                         </div>
-                        <h3 class="account_saldo">R$ 00.00</h3>
+                        <h3 class="accounts__saldo">R$ 00.00</h3>
                     </li>
                 </ul>
             </section>
